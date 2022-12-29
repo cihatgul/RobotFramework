@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221227 15:18:35.847" rpa="false" schemaversion="3">
+<suite id="s1" name="6Robot Framework" source="D:\Kodlar\Kod\6Robot Framework">
+<suite id="s1-s1" name="Tests" source="D:\Kodlar\Kod\6Robot Framework\Tests">
+<suite id="s1-s1-s1" name="GalataFurniture" source="D:\Kodlar\Kod\6Robot Framework\Tests\GalataFurniture.robot">
+<test id="s1-s1-s1-t1" name="Yeni bir hesap olustur" line="15">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221227 15:18:36.503" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com'.</msg>
+<status status="PASS" starttime="20221227 15:18:36.502" endtime="20221227 15:18:39.808"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221227 15:18:39.810" endtime="20221227 15:18:39.932"/>
+</kw>
+<kw name="Create linkine tikla" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${createAccountLink}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221227 15:18:39.934" level="INFO">Clicking link '(//a[@id='customer_register_link'])[1]'.</msg>
+<status status="PASS" starttime="20221227 15:18:39.933" endtime="20221227 15:18:41.199"/>
+</kw>
+<status status="PASS" starttime="20221227 15:18:39.933" endtime="20221227 15:18:41.199"/>
+</kw>
+<kw name="uyelik formunu doldur" library="RegisterPage">
+<kw name="Name" library="FakerLibrary">
+<var>${FLisim}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20221227 15:18:41.201" level="INFO">${FLisim} = Elizabeth Parks</msg>
+<status status="PASS" starttime="20221227 15:18:41.200" endtime="20221227 15:18:41.201"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${isim}</arg>
+<arg>${FLisim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 15:18:41.202" level="INFO">Typing text 'Elizabeth Parks' into text field '//input[@id='FirstName']'.</msg>
+<status status="PASS" starttime="20221227 15:18:41.201" endtime="20221227 15:18:41.269"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${FLsoyisim}</var>
+<msg timestamp="20221227 15:18:41.269" level="INFO">${FLsoyisim} = Ross</msg>
+<status status="PASS" starttime="20221227 15:18:41.269" endtime="20221227 15:18:41.270"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${soyisim}</arg>
+<arg>${FLsoyisim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 15:18:41.271" level="INFO">Typing text 'Ross' into text field '//input[@id='LastName']'.</msg>
+<status status="PASS" starttime="20221227 15:18:41.270" endtime="20221227 15:18:41.347"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email}</arg>
+<arg>${emailStr}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 15:18:41.349" level="INFO">Typing text 'egulcihat@gmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20221227 15:18:41.347" endtime="20221227 15:18:41.440"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${passwordStr}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 15:18:41.441" level="INFO">Typing password into text field '//input[@id='CreatePassword']'.</msg>
+<msg timestamp="20221227 15:18:41.477" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221227 15:18:41.514" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221227 15:18:41.440" endtime="20221227 15:18:41.514"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${createButonu}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221227 15:18:41.515" level="INFO">Clicking button '//input[@value='Create']'.</msg>
+<status status="PASS" starttime="20221227 15:18:41.515" endtime="20221227 15:18:43.554"/>
+</kw>
+<status status="PASS" starttime="20221227 15:18:41.199" endtime="20221227 15:18:43.554"/>
+</kw>
+<kw name="uyeligi onayla" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logOutButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221227 15:18:43.621" level="INFO">Element '//a[@id='CartButton']' is displayed.</msg>
+<status status="PASS" starttime="20221227 15:18:43.554" endtime="20221227 15:18:43.622"/>
+</kw>
+<status status="PASS" starttime="20221227 15:18:43.554" endtime="20221227 15:18:43.622"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221227 15:18:43.623" endtime="20221227 15:18:45.752"/>
+</kw>
+<status status="PASS" starttime="20221227 15:18:36.501" endtime="20221227 15:18:45.753"/>
+</test>
+<status status="PASS" starttime="20221227 15:18:35.878" endtime="20221227 15:18:45.755"/>
+</suite>
+<status status="PASS" starttime="20221227 15:18:35.874" endtime="20221227 15:18:45.756"/>
+</suite>
+<status status="PASS" starttime="20221227 15:18:35.851" endtime="20221227 15:18:45.758"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="6Robot Framework">6Robot Framework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">6Robot Framework.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GalataFurniture">6Robot Framework.Tests.GalataFurniture</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
